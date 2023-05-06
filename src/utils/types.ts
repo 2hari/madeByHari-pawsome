@@ -3,7 +3,7 @@ import { StaticImageData } from "next/image"
 export enum SelectedSection {
   Home = 'home',
   About = "about",
-  Service = "service",
+  Services = "services",
   Contact = "contact",
 }
 

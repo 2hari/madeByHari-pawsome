@@ -5,6 +5,8 @@ import Header from "@/components/Header"
 import Pets from "@/sections/Pets"
 import Services from "@/sections/Services"
 import Adoption from "@/sections/Adoption"
+import Newsletter from "@/sections/Newsletter"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   const [selectedSection, setSelectedSection] = useState<SelectedSection>(
@@ -32,8 +34,10 @@ export default function Home() {
       />
       <Hero />
       <Pets />
-      <Services />
-      <Adoption />
+      <Services setSelectedSection={setSelectedSection} />
+      <Adoption setSelectedSection={setSelectedSection} />
+      <Newsletter setSelectedSection={setSelectedSection} />
+      <Footer />
     </main>
   )
 }

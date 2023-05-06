@@ -3,18 +3,34 @@ import AnchorLink from "react-anchor-link-smooth-scroll"
 
 type LinkProps = {
   page: string
+  isTopOfPage: boolean
+  showSidebar: boolean
   selectedSection: SelectedSection
   setSelectedSection: (value: SelectedSection) => void
 }
 
-const Link = ({ page, selectedSection, setSelectedSection }: LinkProps) => {
+const Link = ({
+  page,
+  isTopOfPage,
+  selectedSection,
+  setSelectedSection,
+  showSidebar,
+}: LinkProps) => {
   const lowerCasePage = page
     .toLowerCase()
     .replace(/ /g, "") as typeof selectedSection
 
   return (
     <AnchorLink
-      className={`${selectedSection === lowerCasePage ? "text-primary-500" : ""}
+      className={` ${
+        selectedSection === lowerCasePage
+          ? "text-orange"
+          : isTopOfPage
+          ? showSidebar
+            ? ""
+            : "text-white"
+          : "text-white"
+      } 
         transition duration-500 hover:text-primary-300
       `}
       href={`#${lowerCasePage}`}
