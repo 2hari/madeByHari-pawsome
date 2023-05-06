@@ -36,7 +36,7 @@ module.exports = {
         yellow: "#fbbd08",
       },
       backgroundImage: {
-        hero: "url('/img/hero/hero-bg.png')",
+        hero: "url('/img/hero/hero.png')",
         pets: "url('/img/pets/pets-bg.png')",
         services: "url('/img/services/bg.png')",
         adoption: "url('/img/adoption/bg.png')",

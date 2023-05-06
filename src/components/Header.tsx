@@ -15,7 +15,7 @@ const Header = ({
   setSelectedSection,
 }: HeaderProps) => {
   return (
-    <header className="py-6 lg:absolute lg:w-full lg:left-0">
+    <header className="py-6 lg:absolute lg:w-full lg:left-0 ">
       <div className="container mx-auto flex flex-col gap-y-6 lg:flex-row h-full justify-between items-center relative">
         {/* logo */}
         <a href="#">
@@ -29,12 +29,12 @@ const Header = ({
         {/* nav */}
         <nav className="text-xl flex gap-x-4 lg:gap-x-12">
           <NavLink
-            page="About"
+            page="Services"
             selectedSection={selectedSection}
             setSelectedSection={setSelectedSection}
           />
           <NavLink
-            page="Services"
+            page="About"
             selectedSection={selectedSection}
             setSelectedSection={setSelectedSection}
           />
@@ -45,7 +45,9 @@ const Header = ({
           />
         </nav>
         {/* button */}
-        <button className="btn btn-primary lg:btn-outline">Sign up</button>
+        <button className="btn btn-primary min-[1180px]:btn-outline">
+          Sign up
+        </button>
       </div>
     </header>
   )

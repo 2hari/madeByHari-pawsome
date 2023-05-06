@@ -3,6 +3,8 @@ import { SelectedSection } from "@/utils/types"
 import Hero from "@/sections/Hero"
 import Header from "@/components/Header"
 import Pets from "@/sections/Pets"
+import Services from "@/sections/Services"
+import Adoption from "@/sections/Adoption"
 
 export default function Home() {
   const [selectedSection, setSelectedSection] = useState<SelectedSection>(
@@ -30,6 +32,8 @@ export default function Home() {
       />
       <Hero />
       <Pets />
+      <Services />
+      <Adoption />
     </main>
   )
 }
