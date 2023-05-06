@@ -27,8 +27,8 @@ const Link = ({
           ? "text-orange"
           : isTopOfPage
           ? showSidebar
-            ? ""
-            : "text-white"
+            ? "text-white"
+            : ""
           : "text-white"
       } 
         transition duration-500 hover:text-primary-300

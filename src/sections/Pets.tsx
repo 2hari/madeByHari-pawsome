@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 import { Pet } from "@/utils/types"
 
 const pets: Pet[] = [
@@ -88,24 +89,51 @@ const Pets = () => {
     setPetDetails(pet!)
   }
 
+  const container = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.2 },
+    },
+  }
+
   return (
     <section className="bg-orange w-full">
       <div className="bg-pets bg-center py-6 overflow-x-hidden max-w-[1440px] mx-auto ">
         <div className="flex flex-col lg:flex-row">
           {/* badge */}
-          <div className="hidden xl:flex xl:w-[30%] xl:pl-[160px]">
+          <motion.div
+            className="hidden xl:flex xl:w-[30%] xl:pl-[160px]"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
             <Image
               src={"/img/pets/badge.svg"}
               width={230}
               height={227}
               alt=""
             />
-          </div>
+          </motion.div>
 
           {/* pets */}
           <div className="flex-1 flex flex-col lg:flex-row">
             {/* pet details */}
-            <div className="lg:w-[30%] flex flex-col justify-center items-end pb-6 lg:py-2 mx-auto lg:mx-0">
+            <motion.div
+              className="lg:w-[30%] flex flex-col justify-center items-end pb-6 lg:py-2 mx-auto lg:mx-0"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7 }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
               <div className="text-center text-white">
                 <div className="text-[32px] capitalize">
                   ({petDetails.category})
@@ -122,10 +150,20 @@ const Pets = () => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
             {/* pet list */}
             <div className="relative lg:w-[60%] flex-1 flex items-center">
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-end lg:-mr-6">
+              <motion.div
+                className="flex flex-wrap gap-4 justify-center lg:justify-end lg:-mr-6"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, staggerChildren: 0.5 }}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
                 {pets.map((pet, index) => {
                   return (
                     <div
@@ -149,7 +187,7 @@ const Pets = () => {
                     </div>
                   )
                 })}
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 const Hero = () => {
   return (
@@ -10,15 +11,37 @@ const Hero = () => {
             <div className="hidden xl:flex mb-6 ml-5 relative w-full h-auto">
               <Image src={"/img/hero/pretitle-img.svg"} fill alt="" />
             </div>
-            <h1 className="text-5xl lg:text-8xl uppercase font-bold -tracking-[0.05em] mb-10">
-              A pet first <br />{" "}
-              <span className="text-orange font-normal">aproach to</span>
-              <br />
-              wellness
-            </h1>
-            <button className="btn btn-orange mx-auto lg:mx-0">
-              Learn more
-            </button>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              <h1 className="text-5xl lg:text-8xl uppercase font-bold -tracking-[0.05em] mb-10">
+                A pet first <br />{" "}
+                <span className="text-orange font-normal">aproach to</span>
+                <br />
+                wellness
+              </h1>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              <button className="btn btn-orange mx-auto lg:mx-0">
+                Learn more
+              </button>
+            </motion.div>
           </div>
         </div>
       </div>

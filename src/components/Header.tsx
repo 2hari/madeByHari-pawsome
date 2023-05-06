@@ -89,7 +89,7 @@ const Header = ({
       <div
         className={`z-50 fixed top-0 ${
           showSidebar ? "right-0" : "-right-96"
-        } h-screen w-3/5  sm:w-72 bg-primary shadow-2xl ease-out delay-150 duration-200`}
+        } lg:hidden h-screen w-3/5  sm:w-72 bg-primary shadow-2xl ease-out delay-150 duration-200`}
         ref={sidebarRef}
       >
         <nav role="admin" className="px-6 py-4">
