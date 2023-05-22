@@ -32,9 +32,9 @@ const Header = ({
 
   const navbarBackground = isTopOfPage ? "" : "bg-primary drop-shadow"
   return (
-    <header className={`${navbarBackground} z-40 fixed py-3  w-full `}>
+    <header className={`${navbarBackground} z-20 fixed py-3  w-full `}>
       <div
-        className={`z-40 container mx-auto flex  gap-y-6 h-full justify-between items-center relative`}
+        className={`z-20 container mx-auto flex  gap-y-6 h-full justify-between items-center relative`}
       >
         {/* logo */}
         <a href="#">
@@ -82,7 +82,7 @@ const Header = ({
             onClick={() => setShowSidebar(true)}
             className={`lg:hidden ${isTopOfPage ? "" : "text-white"}`}
           >
-            <HiMenu className="h-10 w-10" />
+            <HiMenu size={40} />
           </button>
         </div>
       </div>
@@ -98,7 +98,7 @@ const Header = ({
               className="mb-16 text-white"
               onClick={() => setShowSidebar(false)}
             >
-              <HiX className="h-10 w-10" />
+              <HiX size={40} />
             </button>
             <ul className="space-y-8 text-center w-full">
               <li>
